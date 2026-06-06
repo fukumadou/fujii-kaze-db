@@ -76,7 +76,7 @@
 
         .search-input {
             width: 100%;
-            padding: 16px 24px;
+            padding: 16px 50px 16px 24px; /* 右側に✕ボタンが入るスペースを確保 */
             font-size: 1rem;
             font-family: var(--font-jp);
             background: var(--card-bg);
@@ -99,6 +99,28 @@
         .search-input::placeholder {
             color: #a8a39d;
             font-weight: 300;
+        }
+
+        /* ✕（クリア）ボタンのスタイリングを追加 */
+        .search-clear-btn {
+            display: none; /* 初期状態は非表示 */
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+            padding: 5px;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .search-clear-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-50%) scale(1.15);
         }
 
         .accordion-wrapper {
@@ -354,6 +376,7 @@
 
         <div class="search-container">
             <input type="text" id="searchInput" class="search-input" placeholder="Search track or album... / 楽曲名・アルバム名で検索">
+            <button id="searchClearBtn" class="search-clear-btn" title="Clear search">✕</button>
         </div>
 
         <main class="accordion-wrapper" id="accordionWrapper">
@@ -524,8 +547,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             const searchInput = document.getElementById('searchInput');
+            const searchClearBtn = document.getElementById('searchClearBtn'); // ✕ボタンを取得
             const accordionItems = document.querySelectorAll('.accordion-item');
             const noResults = document.getElementById('noResults');
+
+            // 共通処理：完全に初期状態（トップページ）にリセットする関数
+            function resetSearch() {
+                searchInput.value = ""; // 入力文字を消去
+                searchClearBtn.style.display = 'none'; // ✕ボタンを隠す
+                noResults.style.display = 'none'; // エラーメッセージを隠す
+
+                accordionItems.forEach(item => {
+                    item.style.display = 'block'; // すべてのアルバムを表示
+                    item.classList.remove('active'); // アコーディオンの開閉フラグを外す
+                    item.querySelector('.accordion-content').style.maxHeight = null; // スムーズに閉じる
+                    
+                    // 中の楽曲リストもすべて通常表示（flex）に戻す
+                    const trackItems = item.querySelectorAll('.track-item');
+                    trackItems.forEach(track => track.style.display = 'flex');
+                });
+            }
 
             // Accordion Logic
             accordionHeaders.forEach(header => {
@@ -558,25 +599,20 @@
                 const query = e.target.value.toLowerCase().trim();
                 let hasVisibleItems = false;
 
+                // 【改善ポイント①】文字を消して空っぽにしたら完全に最初に戻す
+                if (query === "") {
+                    resetSearch();
+                    return;
+                }
+
+                // 文字が入っている間は「✕」ボタンを表示する
+                searchClearBtn.style.display = 'block';
+
                 accordionItems.forEach(item => {
                     const searchAttr = item.getAttribute('data-search').toLowerCase();
                     const trackItems = item.querySelectorAll('.track-item');
                     let matchInAlbum = searchAttr.includes(query);
                     let visibleTracksCount = 0;
-
-                    if (query === "") {
-                        // Reset view
-                        item.style.display = 'block';
-                        trackItems.forEach(track => track.style.display = 'flex');
-                        const content = item.querySelector('.accordion-content');
-                        if (item.classList.contains('active')) {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                        } else {
-                            content.style.maxHeight = null;
-                        }
-                        hasVisibleItems = true;
-                        return;
-                    }
 
                     // Individual track filtration inside blocks
                     trackItems.forEach(track => {
@@ -607,6 +643,12 @@
 
                 // Handle Empty States
                 noResults.style.display = hasVisibleItems ? 'none' : 'block';
+            });
+
+            // 【改善ポイント②】✕ボタンを押したら完全に最初に戻す
+            searchClearBtn.addEventListener('click', () => {
+                resetSearch();
+                searchInput.focus(); // ✕を押したあと、すぐ再入力できるように検索窓にフォーカスを当てる
             });
         });
     </script>
