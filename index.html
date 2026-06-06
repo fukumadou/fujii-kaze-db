@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -371,9 +369,6 @@
                 <div class="accordion-content">
                     <ul class="track-list">
                         <script>
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-                            // 🎵 1stアルバム Spotify URL個別入力エリア
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
                             const sp_nan_nan       = "https://open.spotify.com/intl-ja/track/2Nl3vx5qRnATIckVRZxb4T?si=8d85b54f4bd44452";
                             const sp_mo_eh_wa      = "https://open.spotify.com/intl-ja/track/7vBvAgZizx6wvlVXMbvuf4?si=9783e6ad73344811";
                             const sp_yasashisa     = "https://open.spotify.com/intl-ja/track/0f3Ce9xjHymExIpEyHUC8D?si=01b1a96e5ff14490";
@@ -381,24 +376,23 @@
                             const sp_tsumi         = "https://open.spotify.com/intl-ja/track/0tJmd8OMwEBesfTsvuGayw?si=311824e5073f49d3";
                             const sp_choji         = "https://open.spotify.com/intl-ja/track/2fxqcSRl5dUiMAcSigsmkh?si=c1be263f2ece4eb4";
                             const sp_tokuninai     = "https://open.spotify.com/intl-ja/track/5UiZWCqMerAvmiHtQwTKSj?si=e25425d8a275458c";
-                            const sp_shinunoga = "https://open.spotify.com/intl-ja/track/0HYAsQwJIO6FLqpyTeD3l6?si=a56d9e68c4044ea0";
+                            const sp_shinunoga1st   = "https://open.spotify.com/intl-ja/track/0HYAsQwJIO6FLqpyTeD3l6?si=a56d9e68c4044ea0";
                             const sp_kazeyo        = "https://open.spotify.com/intl-ja/track/77NDAeUdOg9ODtEhbZjAb4?si=4ac62e18f7484e9f";
                             const sp_sayonara      = "https://open.spotify.com/intl-ja/track/58zXQUhb3NXbY2QjhRgTNL?si=8474d695af1b4eea";
                             const sp_kaerou        = "https://open.spotify.com/intl-ja/track/6Dmxt4rbi97c7sjoWRrJoj?si=2cdca139d434402f";
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
                             const tracks1st = [
-                                { ja: "何なんw", en: "Nan-Nan", sp: sp1st, yt: "https://youtu.be/Nt6ZwuVzOS4?si=kF8bJjCTgc6RY3Yx" },
-                                { ja: "もうええわ", en: "Mo-Eh-Wa", sp: sp1st, yt: "https://youtu.be/y4FYCJRjHBg?si=uWNugZrGtyrQMY8g" },
-                                { ja: "優しさ", en: "Yasashisa", sp: sp1st, yt: "https://youtu.be/vzhTpIIQR5I?si=jV1frmJsn637Maj4" },
-                                { ja: "キリがないから", en: "Kiri Going On", sp: sp1st, yt: "https://youtu.be/9f-tksBZ1Wk?si=q8UlZ-XIFQW8XTWZ" },
-                                { ja: "罪の香り", en: "Tsumi no Kaori", sp: sp1st, yt: "https://youtu.be/Ppf9IQgVarU?si=zuVxsJu0276eXbeN" },
-                                { ja: "調子のっちゃって", en: "Choji Nocchatte", sp: sp1st, yt: "https://youtu.be/ihdYF6enCsU?si=xSiHCnKbT0DOmuSh" },
-                                { ja: "特にない", en: "Tokuninai", sp: sp1st, yt: "https://youtu.be/VsmToj4IyPw?si=k-sh0eog7BLu6_xR" },
-                                { ja: "死ぬのがいいわ", en: "Shinunogaiiwa", sp: sp1st, yt: "https://youtu.be/dawrQnvwMTY?si=Lq-zujIqqWqcIXF9" },
-                                { ja: "Kazeyo", en: "Kazeyo", sp: sp1st, yt: "https://youtu.be/AmF0xNMRaP0?si=jPnFza6BR6RZ-HGW" },
-                                { ja: "SAYONARA Baby", en: "SAYONARA Baby", sp: sp1st, yt: "https://youtu.be/zXeusg_KEXY?si=J6iAukonkN8K5eXB" },
-                                { ja: "帰ろう", en: "Kaerou", sp: sp1st, yt: "https://youtu.be/goU1Ei8I8uk?si=**qDdXjfdtr902cP05" },
+                                { ja: "何なんw", en: "Nan-Nan", sp: sp_nan_nan, yt: "https://youtu.be/Nt6ZwuVzOS4?si=kF8bJjCTgc6RY3Yx" },
+                                { ja: "もうええわ", en: "Mo-Eh-Wa", sp: sp_mo_eh_wa, yt: "https://youtu.be/y4FYCJRjHBg?si=uWNugZrGtyrQMY8g" },
+                                { ja: "優しさ", en: "Yasashisa", sp: sp_yasashisa, yt: "https://youtu.be/vzhTpIIQR5I?si=jV1frmJsn637Maj4" },
+                                { ja: "キリがないから", en: "Kiri Going On", sp: sp_kiri, yt: "https://youtu.be/9f-tksBZ1Wk?si=q8UlZ-XIFQW8XTWZ" },
+                                { ja: "罪の香り", en: "Tsumi no Kaori", sp: sp_tsumi, yt: "https://youtu.be/Ppf9IQgVarU?si=zuVxsJu0276eXbeN" },
+                                { ja: "調子のっちゃって", en: "Choji Nocchatte", sp: sp_choji, yt: "https://youtu.be/ihdYF6enCsU?si=xSiHCnKbT0DOmuSh" },
+                                { ja: "特にない", en: "Tokuninai", sp: sp_tokuninai, yt: "https://youtu.be/VsmToj4IyPw?si=k-sh0eog7BLu6_xR" },
+                                { ja: "死ぬのがいいわ", en: "Shinunogaiiwa", sp: sp_shinunoga1st, yt: "https://youtu.be/dawrQnvwMTY?si=Lq-zujIqqWqcIXF9" },
+                                { ja: "特にない (Kazeyo)", en: "Kazeyo", sp: sp_kazeyo, yt: "https://youtu.be/AmF0xNMRaP0?si=jPnFza6BR6RZ-HGW" },
+                                { ja: "SAYONARA Baby", en: "SAYONARA Baby", sp: sp_sayonara, yt: "https://youtu.be/zXeusg_KEXY?si=J6iAukonkN8K5eXB" },
+                                { ja: "帰ろう", en: "Kaerou", sp: sp_kaerou, yt: "https://youtu.be/goU1Ei8I8uk?si=qDdXjfdtr902cP05" }
                             ];
                             document.write(tracks1st.map(t => `
                                 <li class="track-item" data-name="${t.ja.toLowerCase()} ${t.en.toLowerCase()}">
@@ -417,7 +411,7 @@
                 </div>
             </div>
 
-            <div class="accordion-item" data-search="2nd Album LOVE ALL SERVE ALL 2022 きらり Kirari まつり Matsuri へでもねーよ Hedemo Ne-Yo 青春病 Seishun Sick ガーデン Garden 旅路 Tabiji 帰ろう それでは、 Then, ロンリーラプソディ Lonely Rhapsody 燃えよ MO-EH-YO ダウディ Damn">
+            <div class="accordion-item" data-search="2nd Album LOVE ALL SERVE ALL 2022 きらり Kirari まつり Matsuri へでもねーよ Hedemo Ne-Yo 青春病 Seishun Sick ガーデン Garden 旅路 Tabiji やば。 YABA 燃えよ MO-EH-YO それでは、 Then, ロンリーラプソディ Lonely Rhapsody ダム Damn">
                 <button class="accordion-header">
                     <div class="album-info">
                         <span class="album-tag">【2nd Album】</span>
@@ -428,38 +422,30 @@
                 <div class="accordion-content">
                     <ul class="track-list">
                         <script>
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-                            // 🎵 2ndアルバム Spotify URL個別入力エリア
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
                             const sp_kirari        = "https://open.spotify.com/intl-ja/track/3L7ISJTvKx56uhsF28aJ4p?si=ee606f1d4671475d";
                             const sp_matsuri       = "https://open.spotify.com/intl-ja/track/3OdkC5pG8vc26S26qHyBo8?si=ed9e8dbe515a4216";
                             const sp_hedemo        = "https://open.spotify.com/intl-ja/track/7LI2pQoE3fWfOQuds2paXs?si=298f90e34fe64a24";
-	                         const sp_yaba        = "https://open.spotify.com/intl-ja/track/1FDCEz8kY256zhDO2GjWuW?si=eda903bc67cb4edf";
-	                         const sp_moeyo        = "https://open.spotify.com/intl-ja/track/3nPRJP6hLZx32covZfpB6p?si=10f3b5329cb34906";
-		                     const sp_garden        = "https://open.spotify.com/intl-ja/track/5U4PgFWzfzY7VEg9Ck4ziF?si=78ae8ed28dec4b1c";
-                            const sp_damn       = "https://open.spotify.com/intl-ja/track/7dNxxkapvf5eRkw24PHSpy?si=547c95091171436d";
-                            const sp_lonlyrhapsody        = "https://open.spotify.com/intl-ja/track/2T2PRhaEQLPoo78E8zyVgw?si=abc1841eb2424c58";
+                            const sp_yaba          = "https://open.spotify.com/intl-ja/track/1FDCEz8kY256zhDO2GjWuW?si=eda903bc67cb4edf";
+                            const sp_moeyo         = "https://open.spotify.com/intl-ja/track/3nPRJP6hLZx32covZfpB6p?si=10f3b5329cb34906";
+                            const sp_garden        = "https://open.spotify.com/intl-ja/track/5U4PgFWzfzY7VEg9Ck4ziF?si=78ae8ed28dec4b1c";
+                            const sp_damn          = "https://open.spotify.com/intl-ja/track/7dNxxkapvf5eRkw24PHSpy?si=547c95091171436d";
+                            const sp_lonlyrhapsody = "https://open.spotify.com/intl-ja/track/2T2PRhaEQLPoo78E8zyVgw?si=abc1841eb2424c58";
                             const sp_then          = "https://open.spotify.com/intl-ja/track/5qGpsL9fCOr1sGYNMmFFtI?si=a424f32c53a64a10";
-                            const sp_seishun      = "https://open.spotify.com/intl-ja/track/6bioW1LHzS92xtmWT6NeWl?si=46a1ab45be654bee";
+                            const sp_seishun       = "https://open.spotify.com/intl-ja/track/6bioW1LHzS92xtmWT6NeWl?si=46a1ab45be654bee";
                             const sp_tabiji        = "https://open.spotify.com/intl-ja/track/7uSLJCDetmdm3tQcoYLyty?si=8fbacf40ff1e4f13";
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
                             const tracks2nd = [
                                 { ja: "きらり", en: "Kirari", sp: sp_kirari, yt: "https://youtu.be/TcLLpZBWsck?si=tHKDgwcmrYwm8NmF" },
                                 { ja: "まつり", en: "Matsuri", sp: sp_matsuri, yt: "https://youtu.be/NwOvu-j_WjY?si=xd5lC69oKrnVlehj" },
                                 { ja: "へでもねーよ", en: "Hedemo Ne-Yo", sp: sp_hedemo, yt: "https://youtu.be/MsGDkuzrKCU?si=NVhEaPzyIQhXpwDT" },
-		                        { ja: "やば。", en: "YABA", sp: sp_seishun, yt: "https://youtu.be/7xbokCesviM?si=ppxJKjilj5SJN2dH" },
-		                        { ja: "燃えよ", en: "MO-EH-YO", sp: sp_moehyo, yt: "https://youtu.be/rZxR9bpsYLU?si=ILsm1gqgjkoWFl1D" },
-                                 { ja: "ガーデン", en: "Garden", sp: sp_garden, yt: "https://www.youtube.com/watch?v=M9-2XG8R7bU" },
-                                 { ja: "Damn", en: "Damn", sp: sp_damn, yt: "https://youtu.be/yP7K2lXr6GA?si=0S44aAe_41SR651D" }
-                                 { ja: "ロンリーラプソディ", en: "Lonely Rhapsody", sp: sp_rhapsody, yt: "https://youtu.be/I3oUsW9bXvQ?si=ELW0FdFBKKkm7lfw" },
-                                 { ja: "それでは、", en: "Then,", sp: sp_then, yt: "https://youtu.be/1cXlo7vkxhE?si=HtIZwO9lPvaiZCFj" },
+                                { ja: "やば。", en: "YABA", sp: sp_yaba, yt: "https://youtu.be/7xbokCesviM?si=ppxJKjilj5SJN2dH" },
+                                { ja: "燃えよ", en: "MO-EH-YO", sp: sp_moeyo, yt: "https://youtu.be/rZxR9bpsYLU?si=ILsm1gqgjkoWFl1D" },
+                                { ja: "ガーデン", en: "Garden", sp: sp_garden, yt: "https://www.youtube.com/watch?v=M9-2XG8R7bU" },
+                                { ja: "Damn", en: "Damn", sp: sp_damn, yt: "https://youtu.be/yP7K2lXr6GA?si=0S44aAe_41SR651D" },
+                                { ja: "ロンリーラプソディ", en: "Lonely Rhapsody", sp: sp_lonlyrhapsody, yt: "https://youtu.be/I3oUsW9bXvQ?si=ELW0FdFBKKkm7lfw" },
+                                { ja: "それでは、", en: "Then,", sp: sp_then, yt: "https://youtu.be/1cXlo7vkxhE?si=HtIZwO9lPvaiZCFj" },
                                 { ja: "青春病", en: "Seishun Sick", sp: sp_seishun, yt: "https://youtu.be/kQvT37OzkP8?si=UfVnKJqcITpnCZ0t" },
-                                { ja: "旅路", en: "Tabiji", sp: sp_tabiji, yt: "https://youtu.be/29p8FvT_puU?si=owADX8b7nGfe3jFH" },
-                                
-                                
-                                
-                                
+                                { ja: "旅路", en: "Tabiji", sp: sp_tabiji, yt: "https://youtu.be/29p8FvT_puU?si=owADX8b7nGfe3jFH" }
                             ];
                             document.write(tracks2nd.map(t => `
                                 <li class="track-item" data-name="${t.ja.toLowerCase()} ${t.en.toLowerCase()}">
@@ -489,22 +475,18 @@
                 <div class="accordion-content">
                     <ul class="track-list">
                         <script>
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-                            // 🎵 デジタルシングル Spotify URL個別入力エリア
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
                             const sp_michiteyuku  = "ここに『満ちてゆく』のSpotify URL"; 
                             const sp_hana         = "ここに『花』のSpotify URL";
                             const sp_workin       = "ここに『Workin' Hard』のSpotify URL";
                             const sp_grace        = "ここに『Grace』のSpotify URL";
-                            const sp_shinunoga    = "ここに『死ぬのがいいわ』のSpotify URL";
-                            // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+                            const sp_shinunoga2nd = "ここに『死ぬのがいいわ』のSpotify URL";
 
                             const tracksSingles = [
                                 { ja: "満ちてゆく", en: "Overflowing", sp: sp_michiteyuku, yt: "https://www.youtube.com/watch?v=Nh33YPJ180k" },
                                 { ja: "花", en: "Hana", sp: sp_hana, yt: "https://www.youtube.com/watch?v=rZXVmxFrW8A" },
                                 { ja: "Workin' Hard", en: "Workin' Hard", sp: sp_workin, yt: "https://www.youtube.com/watch?v=88wHgiUakv8" },
                                 { ja: "Grace", en: "Grace", sp: sp_grace, yt: "https://www.youtube.com/watch?v=rXI6DCH1VVM" },
-                                { ja: "死ぬのがいいわ", en: "Shinunoga E-Wa", sp: sp_shinunoga, yt: "https://www.youtube.com/watch?v=dawrQnvwqwY" }
+                                { ja: "死ぬのがいいわ", en: "Shinunoga E-Wa", sp: sp_shinunoga2nd, yt: "https://www.youtube.com/watch?v=dawrQnvwqwY" }
                             ];
                             document.write(tracksSingles.map(t => `
                                 <li class="track-item" data-name="${t.ja.toLowerCase()} ${t.en.toLowerCase()}">
