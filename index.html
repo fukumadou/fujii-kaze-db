@@ -1,6 +1,120 @@
 <!DOCTYPE html>
 <html lang="ja">
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fujii Kaze Global Discography</title>
+  <style>
+    /* ==========================================
+       🎨 スマホ対応（レスポンシブ）CSS
+       ========================================== */
+    
+    /* 全体の基本設定 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fcfbfa; /* 陶器の背景に馴染む柔らかい白 */
+      color: #333;
+    }
+
+    /* 1. ヘッダー（一番上のエリア）全体の調整 */
+    .site-header {
+      display: flex;
+      flex-direction: column; /* スマホでは縦並びにする */
+      align-items: center;
+      padding: 20px 10px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    /* 2. ロゴ画像リンクの設定 */
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      max-width: 100%;
+      text-align: center;
+    }
+    
+    /* タップしたときに少し透明にして「ボタン感」を出す */
+    .logo-link:hover, .logo-link:active {
+      opacity: 0.8;
+    }
+
+    /* 3. ロゴ画像のサイズ調整（スマホでも絶対にはみ出さない） */
+    .header-logo-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 250px; /* パソコン画面で大きくなりすぎないように制限 */
+      object-fit: contain;
+    }
+
+    /* 4. 英語ナビゲーションメニューの配置 */
+    .header-nav {
+      display: flex;
+      flex-wrap: wrap; /* 画面が狭いときは自動で折り返す */
+      justify-content: center;
+      gap: 15px;      /* ボタン同士の程よいスキマ */
+      margin-top: 15px;
+      padding: 0;
+    }
+
+    /* メニューボタン単体の見た目 */
+    .nav-item {
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 5px 8px;
+    }
+
+    /* 現在いるページのメニューを強調（HOMEの下線） */
+    .nav-item.active {
+      font-weight: bold;
+      border-bottom: 2px solid #4a4a4a;
+    }
+
+    /* パソコンなど画面が広いとき（横幅が600px以上）の調整 */
+    @media (min-width: 600px) {
+      .site-header {
+        flex-direction: column; /* PCでも美しいアートを中央に魅せるため縦並びを維持 */
+        padding: 30px 20px;
+      }
+      .nav-item {
+        font-size: 14px;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    
+<a href="index.html" class="logo-link" title="Go to Home">
+      <img src="kaze-logo.png" alt="Fujii Kaze Global Discography" class="header-logo-img">
+    </a>
+    
+    <nav class="header-nav">
+      <a href="index.html" class="nav-item active">HOME</a>
+      <a href="#albums" class="nav-item">ALBUMS</a>
+      <a href="#singles" class="nav-item">SINGLES</a>
+      <a href="#global-map" class="nav-item">GLOBAL MAP</a>
+      <a href="#about" class="nav-item">ABOUT</a>
+    </nav>
+    
+  </header>
+
+  </body>
+</html>
+
+
+
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fujii Kaze - Global Accordion Discography</title>
