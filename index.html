@@ -14,7 +14,18 @@
         .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
         h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 300; letter-spacing: 2px; }
         .subtitle { margin-bottom: 30px; color: #7a766e; }
-        .search-box { width: 100%; padding: 15px; border-radius: 30px; border: none; background: #dcd7cc; color: #4a453e; margin-bottom: 30px; text-align: center; }
+        .search-box {
+    width: 100%;         /* 親要素の幅いっぱいに広がる */
+    box-sizing: border-box; /* 余白を幅の中に含める（これではみ出さない） */
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: #2a2926; /* ここは今のダーク系色のままです */
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;      /* 崩れを防ぐための設定 */
+}
         .accordion-item { background: #dcd7cc; border-radius: 12px; margin-bottom: 15px; padding: 20px; text-align: left; color: #4a453e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
