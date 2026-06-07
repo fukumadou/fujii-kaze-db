@@ -5,36 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fujii Kaze Global Discography</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfbfa; color: #333; }
-        .site-header { display: flex; flex-direction: column; align-items: center; padding: 20px 10px; border-bottom: 1px solid #eaeaea; }
-        .header-logo-img { max-width: 100%; height: auto; max-height: 250px; }
-        .header-nav { display: flex; justify-content: center; gap: 15px; margin-top: 5px; }
-        .nav-item { text-decoration: none; color: #4a4a4a; font-size: 13px; font-weight: 500; }
-        .container { max-width: 768px; margin: 0 auto; padding: 40px 20px; }
-        /* リスト部分のスタイルは昨日までのものをここにそのまま維持しています */
-        .accordion-item { background: rgba(255, 255, 255, 0.75); border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 16px; margin-bottom: 20px; }
-        .accordion-header { width: 100%; padding: 24px; background: none; border: none; cursor: pointer; text-align: left; }
+        body { margin: 0; padding: 0; font-family: sans-serif; background-color: #fcfbfa; }
+        .site-header { display: flex; flex-direction: column; align-items: center; padding: 20px; border-bottom: 1px solid #eaeaea; }
+        .container { max-width: 768px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+        .accordion-item { background: #fff; border: 1px solid #ddd; margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
+        .accordion-header { width: 100%; padding: 20px; background: #f9f9f9; border: none; cursor: pointer; text-align: left; font-weight: bold; }
     </style>
 </head>
 <body>
-
     <header class="site-header">
-        <a href="index.html" class="logo-link">
-            <img src="kaze-logo.png" alt="Fujii Kaze" class="header-logo-img">
-        </a>
-        <nav class="header-nav">
-            <a href="index.html" class="nav-item">HOME</a>
-            <a href="#albums" class="nav-item">ALBUMS</a>
-            <a href="#singles" class="nav-item">SINGLES</a>
-        </nav>
+        <a href="index.html"><img src="kaze-logo.png" alt="Logo" style="max-width:200px;"></a>
     </header>
 
     <main class="container">
         <h1>Fujii Kaze Discography</h1>
-        <div class="accordion-wrapper">
-             <p>（ここに昨日のリストコードが正しく配置されます）</p>
+        
+        <div class="accordion-item">
+            <button class="accordion-header">1st Album: HELP EVER HURT NEVER</button>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">2nd Album: LOVE ALL SERVE ALL</button>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">Singles</button>
         </div>
     </main>
-
 </body>
 </html>
