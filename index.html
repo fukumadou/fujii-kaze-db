@@ -3,46 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fujii Kaze Global Discography</title>
+    <title>Fujii Kaze Discography</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #e8e4db; color: #333; text-align: center; }
-        .site-header { padding: 30px 20px 10px; }
-        .header-logo-img { max-width: 400px; width: 100%; height: auto; margin-bottom: 10px; }
-        .header-nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; font-weight: bold; }
-        .nav-item { text-decoration: none; color: #333; padding: 5px; }
-        .nav-item:focus, .nav-item:hover { outline: 2px solid #333; border-radius: 4px; }
-        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-        h1 { font-size: 2.5rem; margin-bottom: 5px; color: #222; }
-        .subtitle { margin-bottom: 30px; color: #555; }
-        .search-box { width: 90%; max-width: 600px; padding: 15px; border-radius: 30px; border: 1px solid #b8b3a8; background: #dcd7cc; color: #333; margin-bottom: 30px; text-align: center; }
-        .accordion-item { background: #dcd7cc; border-radius: 12px; margin-bottom: 15px; padding: 20px; text-align: left; color: #333; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 1rem; }
-        .accordion-item:hover, .accordion-item:focus { background: #cfcaba; outline: 2px solid #555; }
-        
-        /* フッターのスタイル */
-        .site-footer { margin-top: 40px; padding: 20px; color: #555; font-size: 0.9rem; }
-        .footer-link { color: #333; text-decoration: underline; }
+        body { font-family: sans-serif; background: #f4ede2; padding: 20px; line-height: 1.6; color: #333; }
+        .container { max-width: 700px; margin: 0 auto; }
+        .search-box { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .album-section { margin-bottom: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .album-header { width: 100%; padding: 20px; background: #eee; border: none; font-weight: bold; cursor: pointer; text-align: left; }
+        .track-list { display: none; padding: 0; list-style: none; }
+        .track-item { padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .links a { margin-left: 10px; text-decoration: none; color: #007bff; }
+        footer { margin-top: 40px; text-align: center; color: #777; }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <img src="kaze-logo.png" alt="Fujii Kaze オフィシャルロゴ" class="header-logo-img">
-        <nav class="header-nav" aria-label="メインメニュー">
-            <a href="#" class="nav-item">HOME</a>
-            <a href="#" class="nav-item">ALBUMS</a>
-            <a href="#" class="nav-item">SINGLES</a>
-        </nav>
-    </header>
-    <main class="container">
-        <h1>Fujii Kaze</h1>
-        <p class="subtitle">Global Discography & Directory</p>
-        <input type="text" id="search" class="search-box" placeholder="Search track or album...">
-        <button class="accordion-item" aria-expanded="false">【1ST ALBUM】<br><strong>HELP EVER HURT NEVER (2020)</strong> <span>▼</span></button>
-        <button class="accordion-item" aria-expanded="false">【2ND ALBUM】<br><strong>LOVE ALL SERVE ALL (2022)</strong> <span>▼</span></button>
-        <button class="accordion-item" aria-expanded="false">【3RD ALBUM】<br><strong>HURT NEVER HELP EVER (2024)</strong> <span>▼</span></button>
-    </main>
+
+<div class="container">
+    <h1>Fujii Kaze Discography</h1>
+    <input type="text" id="searchInput" class="search-box" placeholder="曲名で検索...">
     
-    <footer class="site-footer">
-        <p>Visit Official Site: <a href="https://fujiikaze.com/" class="footer-link" target="_blank">fujiikaze.com</a></p>
-    </footer>
+    <div id="content">
+        <div class="album-section">
+            <button class="album-header" onclick="toggle(this)">HELP EVER HURT NEVER (2020)</button>
+            <ul class="track-list">
+                <li class="track-item">何なんw (Nan-Nan) <div class="links"><a href="https://youtu.be/Nt6ZwuVzOS4">YT</a></div></li>
+                <li class="track-item">帰ろう (Kaerou) <div class="links"><a href="https://youtu.be/goU1Ei8I8uk">YT</a></div></li>
+            </ul>
+        </div>
+        <div class="album-section">
+            <button class="album-header" onclick="toggle(this)">LOVE ALL SERVE ALL (2022)</button>
+            <ul class="track-list">
+                <li class="track-item">きらり (Kirari) <div class="links"><a href="https://youtu.be/TcLLpZBWsck">YT</a></div></li>
+                <li class="track-item">まつり (Matsuri) <div class="links"><a href="https://youtu.be/NwOvu-j_WjY">YT</a></div></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // アコーディオン開閉
+    function toggle(btn) {
+        const list = btn.nextElementSibling;
+        list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 検索機能
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        const val = this.value.toLowerCase();
+        document.querySelectorAll('.track-item').forEach(item => {
+            item.style.display = item.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+        });
+    });
+</script>
+
 </body>
 </html>
