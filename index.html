@@ -5,42 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fujii Kaze Global Discography</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfbfa; color: #333; }
-        .site-header { display: flex; flex-direction: column; align-items: center; padding: 20px 10px; border-bottom: 1px solid #eaeaea; }
-        .header-logo-img { max-width: 100%; height: auto; max-height: 250px; }
-        .header-nav { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
-        .nav-item { text-decoration: none; color: #4a4a4a; font-size: 14px; font-weight: bold; }
-        .container { max-width: 768px; margin: 0 auto; padding: 40px 20px; }
-        h1 { text-align: center; font-size: 2rem; }
-        .accordion-item { background: #fff; border: 1px solid #ddd; margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
-        .accordion-header { width: 100%; padding: 20px; background: #f9f9f9; border: none; cursor: pointer; text-align: left; font-weight: bold; }
+        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #e8e4db; color: #4a453e; text-align: center; }
+        .site-header { padding: 30px 20px 10px; } /* 余白を調整 */
+        .header-logo-img { max-width: 400px; width: 100%; height: auto; margin-bottom: 10px; }
+        /* ここでメニュー下の空間を狭くしました */
+        .header-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; font-weight: bold; letter-spacing: 1px; }
+        .nav-item { text-decoration: none; color: #4a453e; font-size: 14px; }
+        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 300; letter-spacing: 2px; }
+        .subtitle { margin-bottom: 30px; color: #7a766e; }
+        .search-box { width: 100%; padding: 15px; border-radius: 30px; border: none; background: #dcd7cc; color: #4a453e; margin-bottom: 30px; text-align: center; }
+        .accordion-item { background: #dcd7cc; border-radius: 12px; margin-bottom: 15px; padding: 20px; text-align: left; color: #4a453e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
 <body>
-
     <header class="site-header">
-        <a href="index.html">
-            <img src="kaze-logo.png" alt="Fujii Kaze" class="header-logo-img">
-        </a>
+        <img src="kaze-logo.png" alt="Fujii Kaze" class="header-logo-img">
         <nav class="header-nav">
-            <a href="index.html" class="nav-item">HOME</a>
-            <a href="#albums" class="nav-item">ALBUMS</a>
-            <a href="#singles" class="nav-item">SINGLES</a>
+            <a href="#" class="nav-item">HOME</a>
+            <a href="#" class="nav-item">ALBUMS</a>
+            <a href="#" class="nav-item">SINGLES</a>
+            <a href="#" class="nav-item">GLOBAL MAP</a>
+            <a href="#" class="nav-item">ABOUT</a>
         </nav>
     </header>
 
     <main class="container">
-        <h1>Fujii Kaze Discography</h1>
-        <div class="accordion-item">
-            <button class="accordion-header">1st Album: HELP EVER HURT NEVER</button>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-header">2nd Album: LOVE ALL SERVE ALL</button>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-header">Singles</button>
-        </div>
+        <h1>FUJII KAZE</h1>
+        <p class="subtitle">Global Discography & Directory</p>
+        <input type="text" class="search-box" placeholder="Search track or album... / 楽曲名・アルバム名で検索">
+        
+        <div class="accordion-item">【1ST ALBUM】<br><strong>HELP EVER HURT NEVER (2020)</strong> <span>▼</span></div>
+        <div class="accordion-item">【2ND ALBUM】<br><strong>LOVE ALL SERVE ALL (2022)</strong> <span>▼</span></div>
+        <div class="accordion-item">【DIGITAL SINGLES / OTHER】<br><strong>Singles & Highlights</strong> <span>▼</span></div>
     </main>
-
 </body>
 </html>
