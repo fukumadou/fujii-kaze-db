@@ -1,41 +1,39 @@
-// 検索機能の続きと強化
-searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    
-    // ✕ボタンの表示切り替え
-    searchClearBtn.style.display = searchTerm ? 'block' : 'none';
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fujii Kaze Discography</title>
+    <style>
+        body { background-color: #2e2b26; color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+        img { max-width: 100%; height: auto; margin-bottom: 20px; }
+        .nav { margin-bottom: 40px; }
+        .nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        input { width: 80%; max-width: 500px; padding: 15px; border-radius: 10px; border: none; background: #3d3a35; color: #fff; margin-bottom: 30px; }
+        .accordion { width: 80%; max-width: 600px; margin: 10px auto; background: #3d3a35; padding: 15px; border-radius: 8px; cursor: pointer; text-align: left; }
+        footer { margin-top: 50px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
 
-    let hasAnyMatch = false;
+    <img src="https://i.imgur.com/your-image-url.jpg" alt="Fujii Kaze"> <div class="nav">
+        <a href="#">HOME</a>
+        <a href="#">ALBUMS</a>
+        <a href="#">SINGLES</a>
+    </div>
 
-    accordionItems.forEach(item => {
-        const trackItems = item.querySelectorAll('.track-item');
-        let hasTrackMatch = false;
+    <h1>Fujii Kaze</h1>
+    <p>Global Discography & Directory</p>
 
-        trackItems.forEach(track => {
-            const trackName = track.getAttribute('data-name');
-            if (trackName.includes(searchTerm)) {
-                track.style.display = 'flex';
-                hasTrackMatch = true;
-                hasAnyMatch = true;
-            } else {
-                track.style.display = 'none';
-            }
-        });
+    <input type="text" placeholder="Search track or album...">
 
-        // 検索にヒットした楽曲があれば、アコーディオンを開く
-        if (hasTrackMatch && searchTerm !== "") {
-            item.classList.add('active');
-            item.querySelector('.accordion-content').style.maxHeight = 
-                item.querySelector('.accordion-content').scrollHeight + "px";
-        } else if (searchTerm === "") {
-            // 文字が空なら閉じる
-            item.classList.remove('active');
-            item.querySelector('.accordion-content').style.maxHeight = null;
-        }
-    });
+    <div class="accordion">【1ST ALBUM】 HELP EVER HURT NEVER (2020)</div>
+    <div class="accordion">【2ND ALBUM】 LOVE ALL SERVE ALL (2022)</div>
+    <div class="accordion">【3RD ALBUM】 HURT NEVER HELP EVER (2024)</div>
 
-    noResults.style.display = hasAnyMatch ? 'none' : 'block';
-});
+    <footer>
+        <p>Visit Official Site: <a href="https://fujiikaze.com" style="color: #fff;">fujiikaze.com</a></p>
+    </footer>
 
-// ✕ボタンのイベント
-searchClearBtn.addEventListener('click', resetSearch);
+</body>
+</html>
