@@ -1,60 +1,41 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fujii Kaze Discography</title>
-    <style>
-        body { font-family: sans-serif; background: #f4ede2; padding: 20px; line-height: 1.6; color: #333; }
-        .container { max-width: 700px; margin: 0 auto; }
-        .search-box { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; }
-        .album-section { margin-bottom: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .album-header { width: 100%; padding: 20px; background: #eee; border: none; font-weight: bold; cursor: pointer; text-align: left; }
-        .track-list { display: none; padding: 0; list-style: none; }
-        .track-item { padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .links a { margin-left: 10px; text-decoration: none; color: #007bff; }
-        footer { margin-top: 40px; text-align: center; color: #777; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Fujii Kaze Discography</h1>
-    <input type="text" id="searchInput" class="search-box" placeholder="曲名で検索...">
+// 検索機能の続きと強化
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
     
-    <div id="content">
-        <div class="album-section">
-            <button class="album-header" onclick="toggle(this)">HELP EVER HURT NEVER (2020)</button>
-            <ul class="track-list">
-                <li class="track-item">何なんw (Nan-Nan) <div class="links"><a href="https://youtu.be/Nt6ZwuVzOS4">YT</a></div></li>
-                <li class="track-item">帰ろう (Kaerou) <div class="links"><a href="https://youtu.be/goU1Ei8I8uk">YT</a></div></li>
-            </ul>
-        </div>
-        <div class="album-section">
-            <button class="album-header" onclick="toggle(this)">LOVE ALL SERVE ALL (2022)</button>
-            <ul class="track-list">
-                <li class="track-item">きらり (Kirari) <div class="links"><a href="https://youtu.be/TcLLpZBWsck">YT</a></div></li>
-                <li class="track-item">まつり (Matsuri) <div class="links"><a href="https://youtu.be/NwOvu-j_WjY">YT</a></div></li>
-            </ul>
-        </div>
-    </div>
-</div>
+    // ✕ボタンの表示切り替え
+    searchClearBtn.style.display = searchTerm ? 'block' : 'none';
 
-<script>
-    // アコーディオン開閉
-    function toggle(btn) {
-        const list = btn.nextElementSibling;
-        list.style.display = list.style.display === 'block' ? 'none' : 'block';
-    }
+    let hasAnyMatch = false;
 
-    // 検索機能
-    document.getElementById('searchInput').addEventListener('keyup', function() {
-        const val = this.value.toLowerCase();
-        document.querySelectorAll('.track-item').forEach(item => {
-            item.style.display = item.innerText.toLowerCase().includes(val) ? 'flex' : 'none';
+    accordionItems.forEach(item => {
+        const trackItems = item.querySelectorAll('.track-item');
+        let hasTrackMatch = false;
+
+        trackItems.forEach(track => {
+            const trackName = track.getAttribute('data-name');
+            if (trackName.includes(searchTerm)) {
+                track.style.display = 'flex';
+                hasTrackMatch = true;
+                hasAnyMatch = true;
+            } else {
+                track.style.display = 'none';
+            }
         });
-    });
-</script>
 
-</body>
-</html>
+        // 検索にヒットした楽曲があれば、アコーディオンを開く
+        if (hasTrackMatch && searchTerm !== "") {
+            item.classList.add('active');
+            item.querySelector('.accordion-content').style.maxHeight = 
+                item.querySelector('.accordion-content').scrollHeight + "px";
+        } else if (searchTerm === "") {
+            // 文字が空なら閉じる
+            item.classList.remove('active');
+            item.querySelector('.accordion-content').style.maxHeight = null;
+        }
+    });
+
+    noResults.style.display = hasAnyMatch ? 'none' : 'block';
+});
+
+// ✕ボタンのイベント
+searchClearBtn.addEventListener('click', resetSearch);
